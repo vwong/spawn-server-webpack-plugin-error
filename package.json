@@ -1,0 +1,63 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Demonstrates broken spawn-server-webpack-plugin",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "rm -rf ./dist && NODE_ENV=production webpack --progress --stats=errors-warnings",
+    "build:analyze": "ANALYZE=true npm run build",
+    "dev": "webpack serve",
+    "dev:inspect": "INSPECT=1 npm run dev",
+    "postinstall": "patch-package",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\"",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@marko/express": "1.0.0",
+    "express": "4.18.1",
+    "marko": "5.21.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.2",
+    "@babel/plugin-transform-runtime": "7.18.2",
+    "@babel/preset-env": "7.18.2",
+    "@babel/runtime": "7.18.3",
+    "@marko/compiler": "5.21.4",
+    "@marko/jest": "4.1.2",
+    "@marko/testing-library": "6.1.2",
+    "@marko/webpack": "9.2.2",
+    "@types/browserslist-useragent": "3.0.4",
+    "@types/express": "4.17.13",
+    "babel-loader": "8.2.5",
+    "babel-plugin-root-import": "6.6.0",
+    "css-loader": "6.7.1",
+    "css-minimizer-webpack-plugin": "4.0.0",
+    "esbuild": "0.14.43",
+    "esbuild-jest": "0.5.0",
+    "esbuild-register": "3.3.3",
+    "file-loader": "6.2.0",
+    "husky": "8.0.1",
+    "ignore-loader": "0.1.2",
+    "mini-css-extract-plugin": "2.6.0",
+    "npm-run-all": "4.1.5",
+    "path-to-regexp": "6.2.1",
+    "postcss-loader": "7.0.0",
+    "postcss-preset-env": "7.7.1",
+    "postcss-scss": "4.0.4",
+    "resolve-url-loader": "5.0.0",
+    "sass": "1.52.3",
+    "sass-loader": "13.0.0",
+    "source-map-loader": "3.0.1",
+    "spawn-server-webpack-plugin": "^6.2.1",
+    "svg-url-loader": "7.1.1",
+    "ts-loader": "9.3.0",
+    "webpack": "5.73.0",
+    "webpack-bundle-analyzer": "4.5.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.9.2",
+    "webpack-node-externals": "3.0.0"
+  }
+}
